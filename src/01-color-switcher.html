@@ -1,17 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Color switcher</title>
-    <link rel="stylesheet" href="css/common.css" />
-  </head>
-  <body>
-    <p><a href="index.html">Go back</a></p>
 
-    <button type="button" data-start>Start</button>
-    <button type="button" data-stop>Stop</button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Color switcher</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    /* body {
+      display: inline-flex;
+    } */
 
-    <script src="js/01-color-switcher.js" type="module"></script>
-  </body>
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .switcher__nav {
+      width: 100%;
+      margin-top: 200px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-grow: 0;
+    }
+
+    .switcher__items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .switcher__button {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1.62;
+      text-align: center;
+      letter-spacing: 0.03em;
+      box-shadow: none;
+      background-color: whitesmoke;
+      border-radius: 4px;
+      border: 0px;
+      padding: 6px 22px;
+      cursor: pointer;
+      transition-property: color, background-color, box-shadow;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .color-switcher__button:hover,
+    :focus {
+      background: #05c7f3;
+      color: #fff;
+      box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+        0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    }
+  </style>
+</head>
+
+<body>
+  <p><a href="index.html">Go back</a></p>
+  <div class="switcher__nav">
+    <ul class="switcher__items">
+      <li class="switcher__item">
+        <button class="switcher__button" type="button" data-start>Start</button>
+
+      </li>
+      <li class="switcher__item">
+        <button class="switcher__button" type="button" data-stop>Stop</button>
+
+      </li>
+    </ul>
+  </div>
+
+  <script src="js/01-color-switcher.js" type="module"></script>
+</body>
+
 </html>
