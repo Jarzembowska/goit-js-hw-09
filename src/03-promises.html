@@ -1,30 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Promise generator</title>
-    <link rel="stylesheet" href="css/common.css" />
-  </head>
-  <body>
-    <p><a href="index.html">Go back</a></p>
 
-    <form class="form">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Promise generator</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <style>
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    label {
+      font-size: 18px;
+      /* font-weight: 500; */
+    }
+
+    input {
+      border: 2px solid #333;
+      background-color: white;
+      border-radius: 0.25rem;
+
+      /* font: 1.25rem / 1.5 sans-serif; */
+      font-size: 1.25rem;
+      display: block;
+      width: 200px;
+      height: 40px;
+      padding: 0.5rem 0.75rem;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 150px;
+      height: 40px;
+      margin-top: 15px;
+      font-size: 15px;
+      /* font-weight: 500; */
+      border: 2px solid #333;
+      border-radius: 0.25rem;
+    }
+  </style>
+</head>
+
+<body>
+  <p><a href="index.html">Go back</a></p>
+
+  <form id="form" class="form">
+
+    <div class="items">
       <label>
         First delay (ms)
         <input type="number" name="delay" required />
       </label>
+    </div>
+    <div class="items">
       <label>
         Delay step (ms)
         <input type="number" name="step" required />
       </label>
+    </div>
+    <div class="items">
       <label>
         Amount
         <input type="number" name="amount" required />
       </label>
+    </div>
+    <div class="items">
       <button type="submit">Create promises</button>
-    </form>
+    </div>
 
-    <script src="js/03-promises.js" type="module"></script>
-  </body>
+  </form>
+
+  <script src="js/03-promises.js" type="module"></script>
+</body>
+
 </html>
