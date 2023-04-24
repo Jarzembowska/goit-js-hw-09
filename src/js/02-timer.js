@@ -88,7 +88,10 @@ const startInterval = () => {
     secondsSpan.innerHTML = addLeadingZero(convertMs(remaningTime).seconds);
     remaningTime -= 1000;
 
-    if (remaningTime < 0) stopInterval();
+    if (remaningTime < 0) {
+      stopInterval();
+      Notiflix.Notify.success('The countdown is over');
+    }
   }, 1000);
 };
 

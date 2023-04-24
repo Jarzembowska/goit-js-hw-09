@@ -1,9 +1,9 @@
 import Notiflix from 'notiflix';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { Report } from 'notiflix/build/notiflix-report-aio';
-import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
-import { Loading } from 'notiflix/build/notiflix-loading-aio';
-import { Block } from 'notiflix/build/notiflix-block-aio';
+// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+// import { Report } from 'notiflix/build/notiflix-report-aio';
+// import { Confirm } from 'notiflix/build/notiflix-confirm-aio';
+// import { Loading } from 'notiflix/build/notiflix-loading-aio';
+// import { Block } from 'notiflix/build/notiflix-block-aio';
 const formEl = document.getElementById('form');
 
 formEl.addEventListener('submit', ev => {
@@ -17,10 +17,14 @@ formEl.addEventListener('submit', ev => {
   for (let i = 0; i < amount; i++) {
     createPromise(i + 1, firstDeley + i * delayStep)
       .then(({ position, delay }) => {
-        Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        Notiflix.Notify.success(
+          `✅ Fulfilled promise ${position} in ${delay}ms`
+        );
       })
       .catch(({ position, delay }) => {
-        Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+        Notiflix.Notify.failure(
+          `❌ Rejected promise ${position} in ${delay}ms`
+        );
       });
   }
 
